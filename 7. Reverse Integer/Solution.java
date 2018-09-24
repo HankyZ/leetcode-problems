@@ -1,19 +1,23 @@
 class Solution {
     public int reverse(int x) {
+
+        boolean negative = false;
+
+        if (x < 0) {
+            negative = true;
+            x *= -1;
+        }
+
         String tempNum = Integer.toString(x);
 
         StringBuilder invertedNum = new StringBuilder();
 
-        if (tempNum.charAt(0) == '-') {
-            for (int i = 1; i < tempNum.length(); i++)
-                invertedNum.insert(0, tempNum.charAt(i));
-            invertedNum.insert(0, '-');
-        } else {
-            for (int i = 0; i < tempNum.length(); i++)
-                invertedNum.insert(0, tempNum.charAt(i));
-        }
+        for (int i = 0; i < tempNum.length(); i++)
+            invertedNum.insert(0, tempNum.charAt(i));
 
         try {
+            if (negative)
+                return Integer.parseInt(invertedNum.toString()) * -1;
             return Integer.parseInt(invertedNum.toString());
         } catch (NumberFormatException e) {
             return 0;
