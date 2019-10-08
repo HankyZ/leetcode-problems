@@ -1,7 +1,6 @@
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
-
 class ListNode {
     int val;
     ListNode next;
@@ -64,7 +63,5 @@ class Solution {
 
         Solution s = new Solution();
         s.mergeKLists(lists);
-
-        int x = 0;
     }
 }
