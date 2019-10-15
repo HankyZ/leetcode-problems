@@ -60,7 +60,6 @@ class Solution {
 
         ListNode[] lists = {list1.next, list2.next};
 
-
         Solution s = new Solution();
         s.mergeKLists(lists);
     }
